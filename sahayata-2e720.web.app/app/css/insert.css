@@ -1,0 +1,85 @@
+#dataInput{
+    width: 60%;
+    margin: auto;
+    padding: 2%;
+}
+
+#dataInputColumn{
+   padding: 1%;
+}
+
+.numberInput{
+    padding: 2%;
+    width: 100%;
+    font-size: 16px;
+    height: 20px;
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.inputButton{
+    padding: 2%;
+    width: 105%;
+    height: 30px;
+    background-color: #111111;
+    color: white;
+    border: 1px solid black;
+    font-size: 16px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.inputButton:active{
+    box-shadow: 0 0 0 0;
+}
+
+.inputButtonAbsolute:active{
+    box-shadow: 0 0 0 0;
+}
+
+.inputButtonAbsolute{
+    padding: 2%;
+    width: 105%;
+    height: 30px;
+    background-color: #111111;
+    color: white;
+    border: 1px solid black;
+    font-size: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+#dataTable{
+    width: 50%;
+    margin: 25%;
+    margin-top: 28%;
+    z-index: 0;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+#dataTable td, th{
+    border: 1px solid black;
+    padding: 1%;
+    text-align: center;
+}
+
+.inputTolerance{
+    width: 102%;
+    height: 30px;
+    font-size: 16px;
+    background-color: white;
+    border: 1px solid black;
+    text-align: center;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.updateRow{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.updateRow:hover{
+    color: blue;
+}

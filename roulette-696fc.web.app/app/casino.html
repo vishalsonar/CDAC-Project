@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from roulette-696fc.web.app/casino.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 05 Nov 2021 09:30:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>|| Rect Roulette ||</title>
+  <script>
+    if (!sessionStorage.getItem("username")) {
+      window.history.back();
+    }
+  </script>
+  <link rel="stylesheet" href="css/casino.css" />
+  <link rel="stylesheet" href="css/jquery.toastmessage.css" />
+</head>
+
+<body onload="LOAD()">
+  <div id="game">
+    <table id="Spinner" cellspacing="0">
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <table id="CheapTable" cellspacing="0">
+      <tr>
+        <td rowspan="2" onclick="tadd(0,0)"></td>
+        <td onclick="tadd(0,1)"></td>
+        <td onclick="tadd(0,2)"></td>
+        <td onclick="tadd(0,3)"></td>
+        <td onclick="tadd(0,4)"></td>
+        <td onclick="tadd(0,5)"></td>
+        <td onclick="tadd(0,6)"></td>
+        <td onclick="tadd(0,7)"></td>
+        <td onclick="tadd(0,8)"></td>
+        <td onclick="tadd(0,9)"></td>
+        <td onclick="tadd(0,10)"></td>
+        <td onclick="tadd(0,11)"></td>
+        <td onclick="tadd(0,12)"></td>
+        <td onclick="RowArrayOne(0,13)"></td>
+      </tr>
+      <tr>
+        <td onclick="tadd(1,0)"></td>
+        <td onclick="tadd(1,1)"></td>
+        <td onclick="tadd(1,2)"></td>
+        <td onclick="tadd(1,3)"></td>
+        <td onclick="tadd(1,4)"></td>
+        <td onclick="tadd(1,5)"></td>
+        <td onclick="tadd(1,6)"></td>
+        <td onclick="tadd(1,7)"></td>
+        <td onclick="tadd(1,8)"></td>
+        <td onclick="tadd(1,9)"></td>
+        <td onclick="tadd(1,10)"></td>
+        <td onclick="tadd(1,11)"></td>
+        <td onclick="RowArrayTwo(1,12)"></td>
+      </tr>
+      <tr>
+        <td rowspan="2" onclick="tadd(2,0)"></td>
+        <td onclick="tadd(2,1)"></td>
+        <td onclick="tadd(2,2)"></td>
+        <td onclick="tadd(2,3)"></td>
+        <td onclick="tadd(2,4)"></td>
+        <td onclick="tadd(2,5)"></td>
+        <td onclick="tadd(2,6)"></td>
+        <td onclick="tadd(2,7)"></td>
+        <td onclick="tadd(2,8)"></td>
+        <td onclick="tadd(2,9)"></td>
+        <td onclick="tadd(2,10)"></td>
+        <td onclick="tadd(2,11)"></td>
+        <td onclick="tadd(2,12)"></td>
+        <td onclick="RowArrayThree(2,13)"></td>
+      </tr>
+      <tr>
+        <td colspan="4" onclick="RowArrayFour(3,0)"></td>
+        <td colspan="4" onclick="RowArrayFive(3,1)"></td>
+        <td colspan="4" onclick="RowArraySix(3,2)"></td>
+      </tr>
+      <tr>
+        <td style="border: 2px solid rgb(74, 197, 74);"></td>
+        <td colspan="2" onclick="GroupArrayOne(4,1)"></td>
+        <td colspan="2" onclick="GroupArrayTwo(4,2)"></td>
+        <td colspan="2" onclick="GroupArrayThree(4,3)"></td>
+        <td colspan="2" onclick="GroupArrayFour(4,4)"></td>
+        <td colspan="2" onclick="GroupArrayFive(4,5)"></td>
+        <td colspan="2" onclick="GroupArraySix(4,6)"></td>
+      </tr>
+    </table>
+    <table id="buttonCoins">
+      <tr>
+        <td>
+          <button onclick="ROLL()">Spin</button>
+        </td>
+        <td>
+          <button id="_one" style="background-color : #2196F3;" onclick="COIN(1, '#2196F3')">&#x20B9; 1</button>
+        </td>
+        <td>
+          <button id="_five" style="background-color : #827717;" onclick="COIN(5, '#827717')">&#x20B9; 5</button>
+        </td>
+        <td>
+          <button id="_ten" style="background-color : #3F51B5;" onclick="COIN(10, '#4B0082')">&#x20B9; 10</button>
+        </td>
+        <td>
+          <button id="_fifty" style="background-color : #FF00FF;" onclick="COIN(50, '#FF00FF')">&#x20B9; 50</button>
+        </td>
+        <td>
+          <button id="_hundred" style="background-color : #7CFC00;" onclick="COIN(100, '#7CFC00')">&#x20B9; 100</button>
+        </td>
+        <td>
+          <button id="_fivehundred" style="background-color : #FF6D00;" onclick="COIN(500, '#FF6D00')">&#x20B9; 500</button>
+        </td>
+      </tr>
+    </table>
+    <table id="infoTable" cellspacing="0">
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+  <div id="blocker">
+  </div>
+
+  <script src="../ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/jquery.toastmessage.js"></script>
+  <script src="js/hashTable.js"></script>
+  <script src="js/linkList.js"></script>
+  <script src="js/casino.js"></script>
+  <script src="js/hashNumber.js"></script>
+  <script src="js/hashDouble.js"></script>
+</body>
+
+
+<!-- Mirrored from roulette-696fc.web.app/casino.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 05 Nov 2021 09:30:35 GMT -->
+</html>

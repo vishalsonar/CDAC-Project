@@ -1,0 +1,79 @@
+@font-face {
+    font-family: Font;
+    src: url('Red%20Seven.otf');
+}
+
+*{
+    font-family: verdana;
+}
+
+body{
+    background-color: #00C853;
+}
+
+#login{
+    width: 40%;
+    padding: 1%;
+    text-align: center;
+    border: 2px solid black;
+    margin: auto;
+}
+
+#register{
+    width: 40%;
+    padding: 1%;
+    text-align: center;
+    border: 2px solid black;
+    margin: auto;
+    display: none;
+}
+
+#UserName, #Password,
+#Rname, #Rpass, #Epass
+{
+    width: 80%;
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+    margin: auto;
+    margin-bottom: 20px;
+    border: 1px solid black;
+}
+
+#UserName:hover, #Password:hover,
+#Rname:hover, #Rpass:hover, #Epass:hover{
+    box-shadow: 1px 2px 18px;
+}
+
+#Button, #Rbut{
+    width: 40%;
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin: auto;
+    margin-bottom: 40px;
+    border: 1px solid black;
+    box-shadow: 0px 0px;
+}
+
+#Button:hover, #Rbut:hover{
+    box-shadow: 1px 2px 18px;
+    color: black;
+}
+
+h1{
+    font-family: Font;
+    margin-bottom: 40px;
+    font-size: 50px;
+}
+
+p{
+    font-family: verdana;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+hr{
+    border: 1px solid black;
+}

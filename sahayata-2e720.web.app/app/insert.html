@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>|| Insert ||</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/insert.css" />
+    <link rel="stylesheet" href="css/jquery.toastmessage.css" />
+</head>
+
+<body>
+    <div class="head">
+        <table id="headerTable">
+            <tr>
+                <td id="headerColumnLeft">
+                    SAHAYATA
+                </td>
+                <td id="headerColumnRight">
+                    <table id="menuTable">
+                        <tr>
+                            <td>
+                                <a href="index.html" id="menuColumn">Home</a>
+                            </td>
+                            <td>
+                                <a href="insert.html" id="menuColumn" style="color:#FF9800;">Insert</a>
+                            </td>
+                            <td>
+                                <a href="compare.html" id="menuColumn">Compare</a>
+                            </td>
+                            <td>
+                                <a href="about.html" id="menuColumn">BackUp</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <center>
+            <table id="dataInput">
+                <tr>
+                    <td style="text-align:right;">
+                        Actual Value (K&#8486;):
+                    </td>
+                    <td id="dataInputColumn">
+                        <input type="number" placeholder="Actual Value" id="name" class="numberInput" />
+                    </td>
+                    <td id="dataInputColumn">
+                        <input type="button" id="setValue" value="Set Absolute Value" class="inputButtonAbsolute" onclick="updateMargin()" />
+                    </td>
+                </tr>
+                <tr>
+                    <td id="dataInputColumn">
+                        <input type="number" placeholder="Id" id="id" class="numberInput" />
+                    </td>
+                    <td id="dataInputColumn">
+                        <input type="number" placeholder="Resistor Value" id="value" class="numberInput" />
+                    </td>
+                    <td id="dataInputColumn">
+                        <input type="number" placeholder="ppm" id="ppm" class="numberInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td id="dataInputColumn">
+                        <input type="button" value="Add" id="add" class="inputButton" onclick="insert()" />
+                    </td>
+                    <td id="dataInputColumn">
+                        <input type="button" value="Remove" id="remove" class="inputButton" onclick="remove()" />
+                    </td>
+                    <td id="dataInputColumn">
+                        <input type="button" value="Update Row" class="inputButton" onclick="updateRow()" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td id="dataInputColumn" colspan="2">
+                        <input type="text" maxlength="50" placeholder="Table Name" id="tableName_1" class="inputTolerance" />
+                    </td>
+                    <td id="dataInputColumn">
+                        <input type="button" value="Save Table" class="inputButton" onclick="saveData()" />
+                    </td>
+                </tr>
+
+                <tr id="dataInputColumn">
+                    <td colspan="3">
+                        <center id="totalId">Total Count: 0</center>
+                    </td>
+                </tr>
+            </table>
+        </center>
+        <hr style="border: 2px solid black;">
+
+    </div>
+
+    <center>
+        <table id="dataTable" cellspacing="0">
+            <tr>
+                <th id="dataTableRow">Id</th>
+                <th id="dataTableRow">Resistor Value
+                    <span id="spanhead">(K&#8486;)</span>
+                </th>
+                <th id="dataTableRow">TCR Of Resistor
+                    <span id="spanhead">ppm/&#8451;</span>
+                </th>
+                <th id="dataTableRow" style="background-color:black;">iId</th>
+                <th id="dataTableRow">Update Row</th>
+            </tr>
+        </table>
+    </center>
+
+    <script src="js/DataTable.js"></script>
+    <script src="js/JsonObject.js"></script>
+    <script src="js/insert.js"></script>
+    <script src="../ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/jquery.toastmessage.js"></script>
+</body>
+</html>

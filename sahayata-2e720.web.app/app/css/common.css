@@ -1,0 +1,58 @@
+@font-face {
+    font-family: logo;
+    src: url(pirulen_rg.ttf);
+}
+
+@font-face {
+    font-family: body;
+    src: url(Ubuntu-Regular.ttf);
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: body;
+    letter-spacing: 0.5px;
+}
+
+.head{
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+}
+
+#headerTable, #menuTable{
+    width: 100%;
+    background-color: #111111;
+    color: white;
+}
+
+#headerColumnLeft{
+    padding: 1%;
+    font-size: 45px;
+    font-family: logo;
+}
+
+#menuColumn{
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-family: logo;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}

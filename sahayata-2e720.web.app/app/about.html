@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>|| BackUp ||</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/jquery.toastmessage.css" />
+</head>
+
+<body>
+    <div class="head">
+        <table id="headerTable">
+            <tr>
+                <td id="headerColumnLeft">
+                    SAHAYATA
+                </td>
+                <td id="headerColumnRight">
+                    <table id="menuTable">
+                        <tr>
+                            <td>
+                                <a href="index.html" id="menuColumn">Home</a>
+                            </td>
+                            <td>
+                                <a href="insert.html" id="menuColumn">Insert</a>
+                            </td>
+                            <td>
+                                <a href="compare.html" id="menuColumn">Compare</a>
+                            </td>
+                            <td>
+                                <a href="about.html" id="menuColumn" style="color:#FF9800;">BackUp</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <table id="dataTable">
+        <tr>
+            <td>
+                <input type="button" value="Save" id="save-btn" class="selectButton" />
+            </td>
+            <td>
+                <select id="table_one" class="selectTable">
+                    <option>Select Table</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="Upload" id="upload-btn" class="selectButton" />
+            </td>
+            <td>
+                <div class="upload-btn-wrapper">
+                    <input type="file" id="fileId" />
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        onload = function () {
+            for (let key in this.localStorage) {
+                if (key.includes("Resistor_Table_") || key.includes("_Table_")) {
+                    if (key.includes("Resistor_Table_")) {
+                        let option = this.document.createElement("option");
+                        option.text = key.substr(15, key.length);
+                        document.getElementById("table_one").add(option);
+                        continue;
+                    }
+                    if (key.includes("_Table_")) {
+                        let option = this.document.createElement("option");
+                        option.text = key.substr(7, key.length);
+                        document.getElementById("table_one").add(option);
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="../ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/FileSaver.js"></script>
+    <script src="js/jquery.toastmessage.js"></script>
+    <script>
+        $("#save-btn").click(function () {
+            selectOne = document.getElementById("table_one").value;
+            if (selectOne == "Select Table") {
+                $().toastmessage('showToast', {
+                    text: 'Please Select some Table',
+                    sticky: false,
+                    position: 'top-right',
+                    stayTime: 3000,
+                    type: 'warning',
+                    close: function () { }
+                });
+                return false;
+            }
+            let testValue = localStorage.getItem("Resistor_Table_" + selectOne);
+            let stringToStore = "Resistor_Table_" + selectOne + "::::::" + testValue;
+            if (!testValue) {
+                testValue = localStorage.getItem("_Table_" + selectOne);
+                stringToStore = "_Table_" + selectOne + "::::::" + testValue;
+            }
+            let fileName = selectOne + "_sahayata.txt";
+            var blob = new Blob([stringToStore], { type: "text/plain;charset=utf-8" });
+            saveAs(blob, fileName);
+        });
+
+        $("#upload-btn").click(function () {
+            var x = document.getElementById("fileId").files;
+            if (x.length == 0) {
+                $().toastmessage('showToast', {
+                    text: 'Please Select some File',
+                    sticky: false,
+                    position: 'top-right',
+                    stayTime: 3000,
+                    type: 'warning',
+                    close: function () {  }
+                });
+                return false;
+            }
+            var fr = new FileReader();
+            fr.onload = function () {
+                let data = fr.result.split("::::::");
+                localStorage.setItem(data[0], data[1]);
+            };
+            fr.onloadstart = function () {
+                $().toastmessage('showToast', {
+                    text: x[0].name + ' File Successfully Uploaded',
+                    sticky: false,
+                    position: 'top-right',
+                    stayTime: 1000,
+                    type: 'success',
+                    close: function () { location.reload(); }
+                });
+            }
+            if (x[0].name.includes("_sahayata"))
+                fr.readAsText(x[0]);
+            else {
+                $().toastmessage('showToast', {
+                    text: 'Invalid File',
+                    sticky: false,
+                    position: 'top-right',
+                    stayTime: 3000,
+                    type: 'warning',
+                    close: function () { }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

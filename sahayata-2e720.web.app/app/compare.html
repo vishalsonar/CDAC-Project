@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>|| Compare ||</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/compare.css" />
+    <link rel="stylesheet" href="css/jquery.toastmessage.css"/>
+    <script src="js/compare.js"></script>
+</head>
+
+<body>
+    <div class="head">
+        <table id="headerTable">
+            <tr>
+                <td id="headerColumnLeft">
+                    SAHAYATA
+                </td>
+                <td id="headerColumnRight">
+                    <table id="menuTable">
+                        <tr>
+                            <td>
+                                <a href="index.html" id="menuColumn">Home</a>
+                            </td>
+                            <td>
+                                <a href="insert.html" id="menuColumn">Insert</a>
+                            </td>
+                            <td>
+                                <a href="compare.html" id="menuColumn" style="color:#FF9800;">Compare</a>
+                            </td>
+                            <td>
+                                <a href="about.html" id="menuColumn">BackUp</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <table id="tolerance">
+            <tr>
+                <td colspan="3">
+                    <input type="text" placeholder="Table Name" maxlength="50" id="tableName" class="inputTolerance" />
+                </td>
+                <td colspan="1">
+                    <input type="button" id="saveTable" value="Save" onclick="saveTable()" class="selectButton" />
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:right;">
+                    Negative Resistor Tolerance :
+                </td>
+                <td>
+                    <input type="number" id="negativeResistorTolerance" class="inputTolerance" />
+                </td>
+                <td style="text-align:right;">
+                    Positvie Resistor Tolerance :
+                </td>
+                <td>
+                    <input type="number" id="resistorTolerance" class="inputTolerance" />
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:right;">
+                    PPM Tolerance :
+                </td>
+                <td>
+                    <input type="number" id="ppmTolerance" placeholder="Set PPM Tolerance" class="inputTolerance" />
+                </td>
+                <td>
+                    <input type="button" id="setTolerance" value="Set Tolerance" class="selectButton" onclick="setTolerance()" />
+                </td>
+                <td>
+                    <input type="button" id="cmp" value="Compare Again" class="selectButton" onclick="compareAll()" />
+                </td>
+            </tr>
+        </table>
+        <table id="dataInput">
+            <tr>
+                <td>
+                    <select id="table_one" class="selectTable">
+                        <option>Select Table</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="button" id="add" value="Add Selected" class="selectButton" onclick="addSelected()" />
+                </td>
+                <td>
+                    <input type="button" id="remove" value="Remove Last" class="selectButton" onclick="removeLast()" />
+                </td>
+                <td>
+                    <input type="button" id="cmpAll" value="Compare All" onclick="compareAll()" class="selectButton" />
+                </td>
+            </tr>
+        </table>
+        <table id="showSelected" cellspacing="0">
+            <tr id="selectedRow">
+                <td>
+                    <b>Selected Tabels :</b>
+                </td>
+            </tr>
+        </table>
+        <hr style="border: 2px solid black;">
+    </div>
+
+    <center>
+        <table id="dataTable" cellspacing="0">
+        </table>
+    </center>
+
+    <script src="../ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/jquery.toastmessage.js"></script>
+</body>
+
+</html>

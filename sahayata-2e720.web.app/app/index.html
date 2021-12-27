@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>|| Home ||</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/jquery.toastmessage.css" />
+    <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <div class="head">
+        <table id="headerTable">
+            <tr>
+                <td id="headerColumnLeft">
+                    SAHAYATA
+                </td>
+                <td id="headerColumnRight">
+                    <table id="menuTable">
+                        <tr>
+                            <td>
+                                <a href="index.html" id="menuColumn" style="color:#FF9800;">Home</a>
+                            </td>
+                            <td>
+                                <a href="insert.html" id="menuColumn">Insert</a>
+                            </td>
+                            <td>
+                                <a href="compare.html" id="menuColumn">Compare</a>
+                            </td>
+                            <td>
+                                <a href="about.html" id="menuColumn">BackUp</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <table id="dataTable" cellspacing="10">
+        <tr>
+            <td colspan="3" style="background-color: white;">
+                <input type="button" id="search" value="Search" onclick="searchTable();" />
+                <input type="text" maxlength="50" id="searchValue" name="search" placeholder="Search.." style="margin-left: 10px;">
+            </td>
+        </tr>
+    </table>
+
+    <script src="../ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/jquery.toastmessage.js"></script>
+    <script src="../cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+    <style>
+        .jconfirm.jconfirm-white .jconfirm-box, .jconfirm.jconfirm-light .jconfirm-box {
+            width: 30%;
+        }
+    </style>
+</body>
+
+</html>

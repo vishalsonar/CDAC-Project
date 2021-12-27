@@ -1,0 +1,129 @@
+@font-face {
+    font-family: number;
+    src: url('Ubuntu.ttf');
+}
+
+*{
+    font-family: number;
+}
+
+td{
+    
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    width: 5%;
+    color: white;
+}
+table{
+    width: 100%;
+    height: 30%;
+    
+}
+
+#CheapTable{
+    width: 100%;
+    height: 46%;
+    margin-top: 2%;
+    border: 10px solid brown;
+}
+
+#CheapTable td{
+    cursor: pointer;
+}
+
+button{
+    width: 90%;
+    height: 70%;
+    margin-top: 3%;
+    margin-left: 2%;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+body{
+    background-color: #00C853;
+}
+
+#tableCoin{
+    width: 100%;
+    height: 10%;
+    border: 1px solid black;
+}
+#tableCoin td{
+    border: 1px solid black;
+    color: black;
+}
+
+#buttonCoins{
+    width: 100%;
+    height: 10%;
+    border: 1px solid black;
+}
+
+#infoTable{
+    width: 100%;
+    height: 8%;
+    margin-top: 8px;
+    border: 2px solid black;
+}
+
+#infoTable td{
+    border: 2px solid black;
+    color: black;
+}
+
+#game{
+    width: 99%;
+    height: 95%;
+    position: fixed;
+    
+}
+
+#blocker{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    position: relative;
+    margin: 0px;
+    display: none;
+}
+
+button {
+	width: 90%;
+    height: 70%;
+    margin-top: 1%;
+    margin-left: 2%;
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+    background-color: #424242;
+    border: 2px solid #111111;
+    color: #FFFFFF;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+button:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
